@@ -25,14 +25,28 @@ Code, commands, paths, and errors are never shortened. Security warnings, destru
 
 ## Install
 
-Copy `skills/mand` into your agent's skills directory, for example:
+From the root of this repository, install once for Codex, Copilot CLI, Cursor (local), Gemini CLI, OpenCode, and Pi:
 
 ```sh
-# GitHub Copilot CLI (user-level)
-copilot skill add ./skills/mand/SKILL.md
+mkdir -p ~/.agents/skills && cp -r skills/mand ~/.agents/skills/
+```
 
-# Claude Code (user-level)
+For Claude Code, use its user-level skills directory instead:
+
+```sh
 mkdir -p ~/.claude/skills && cp -r skills/mand ~/.claude/skills/
 ```
 
-Then invoke with `/mand` or ask for "mand mode".
+## Activate
+
+| Tool | How to activate |
+|---|---|
+| Claude Code | `/mand` |
+| Codex | `$mand` |
+| Copilot CLI | `/mand` |
+| [Cursor](https://cursor.com/docs/skills) | Select `/mand` in Agent chat |
+| [Gemini CLI](https://geminicli.com/docs/cli/skills/) | Ask for "mand mode" |
+| [OpenCode](https://opencode.ai/docs/skills/) | Mention `@mand` in your prompt |
+| [Pi](https://docs.pi.dev/latest/skills) | `/skill:mand` |
+
+You can also ask for "mand mode" in plain language. In Cursor, `/mand` attaches the skill to one message; use a Custom Mode to keep it active for the session.
